@@ -1,18 +1,29 @@
 import { defineConfig } from "vite";
 import {resolve} from "path";
+import { glob } from 'glob';
+
+// HTMLファイルを自動検出する関数
+const getInputFiles = () => {
+  const files = glob.sync('page/**/*.html', {
+    ignore: ['node_modules/**', 'dist/**'],
+  });
+
+  const input = {"index": resolve(__dirname, "index.html")};
+  files.forEach((file) => {
+    const name = file
+      .replace(/\.html$/, '')
+      .replace(/\//g, '-');
+    input[name] = resolve(__dirname, file);
+  });
+  console.log(input);
+
+  return input;
+};
 
 export default defineConfig({
-    server: {
-        port: 3000,
-        open: true
-    },
     build: {
         rollupOptions: {
-            input: {
-                main: resolve(__dirname, "index.html"),
-                sub: resolve(__dirname, "test/index.html"),
-                sub2: resolve(__dirname, "page_test/index.html")
-            }
+            input: getInputFiles()
         }
     }
 })
