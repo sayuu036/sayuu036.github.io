@@ -1,18 +1,16 @@
 import { defineConfig } from "vite";
-import {resolve} from "path";
-import { glob } from 'glob';
+import { resolve } from "path";
+import { glob } from "glob";
 
 // HTMLファイルを自動検出する関数
 const getInputFiles = () => {
-  const files = glob.sync('page/**/*.html', {
-    ignore: ['node_modules/**', 'dist/**'],
+  const files = glob.sync("pages/**/*.html", {
+    ignore: ["node_modules/**", "dist/**"],
   });
 
-  const input = {"index": resolve(__dirname, "index.html")};
+  const input = { index: resolve(__dirname, "index.html") };
   files.forEach((file) => {
-    const name = file
-      .replace(/\.html$/, '')
-      .replace(/\//g, '-');
+    const name = file.replace(/\.html$/, "").replace(/\//g, "-");
     input[name] = resolve(__dirname, file);
   });
   console.log(input);
@@ -21,9 +19,9 @@ const getInputFiles = () => {
 };
 
 export default defineConfig({
-    build: {
-        rollupOptions: {
-            input: getInputFiles()
-        }
-    }
-})
+  build: {
+    rollupOptions: {
+      input: getInputFiles(),
+    },
+  },
+});
