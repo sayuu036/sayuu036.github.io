@@ -4,7 +4,7 @@ import { glob } from "glob";
 
 // HTMLファイルを自動検出する関数
 const getInputFiles = () => {
-  const files = glob.sync("pages/**/*.html", {
+  const files = glob.sync("page/**/*.html", {
     ignore: ["node_modules/**", "dist/**"],
   });
 

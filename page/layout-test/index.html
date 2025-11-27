@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>index</title>
+        <title>layout-test</title>
         <style>
             * {
                 font-family: sans-serif;
@@ -13,24 +13,42 @@
                 background-color: #282c33;
             }
             body {
-                padding: 20px;
+                padding: 50px;
             }
             .c {
                 margin-top: 100px;
+                background-color: white;
+                opacity: 0.3;
+                display: grid;
+                grid-template-columns: 500px 1fr;
+            }
+            .red {
+                background-color: red;
+                opacity: 0.3;
+                width: 100px;
+                height: 100px;
             }
             hr {
                 border: solid 1px #a5abb6;
+            }
+            a {
+                word-wrap: break-word;
             }
         </style>
     </head>
     <body>
         <div id="top">
-            <h1>sayuu036/<br />index</h1>
-            <p>目次になる予定<br /></p>
+            <h1>sayuu036/<br />layout-test</h1>
             <p>
-                here:<br />
+                home:<br />
                 <a href="https://sayuu036.github.io">
                     https://sayuu036.github.io
+                </a>
+            </p>
+            <p>
+                here:<br />
+                <a href="https://sayuu036.github.io/page/layout-test">
+                    https://sayuu036.github.io/page/layout-test
                 </a>
             </p>
             <h3>免責</h3>
@@ -42,20 +60,9 @@
             <hr />
         </div>
         <div class="c">
-            <h3>style</h3>
-            <p>
-                background-color: #282c33 <br />
-                color: #a5abb6 <br />
-                font-family: sans-serif
-            </p>
-            <p>zedが見やすかったのでカラーピックしてそのまま採用</p>
-        </div>
-        <div class="c">
-            <h2>page</h2>
-            <h3>layout-test</h3>
-            <a href="./page/layout-test/index.html">
-                ./page/layout-test/index.html
-            </a>
+            <div class="red"></div>
+            <div class="red"></div>
+            <div class="red"></div>
         </div>
     </body>
 </html>
