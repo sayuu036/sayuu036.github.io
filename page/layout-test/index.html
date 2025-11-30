@@ -8,25 +8,15 @@
             * {
                 font-family: sans-serif;
                 color: #a5abb6;
+                word-break: break-all;
             }
             html {
                 background-color: #282c33;
+                width: 100%;
+                overflow-x: clip;
             }
             body {
-                padding: 50px;
-            }
-            .c {
-                margin-top: 100px;
-                background-color: white;
-                opacity: 0.3;
-                display: grid;
-                grid-template-columns: 500px 1fr;
-            }
-            .red {
-                background-color: red;
-                opacity: 0.3;
-                width: 100px;
-                height: 100px;
+                padding: 20px;
             }
             hr {
                 border: solid 1px #a5abb6;
@@ -35,6 +25,16 @@
                 word-wrap: break-word;
             }
         </style>
+        <link
+            rel="stylesheet"
+            href="./w1024.css"
+            media="screen and (1024px <= width)"
+        />
+        <link
+            rel="stylesheet"
+            href="./w1024under.css"
+            media="screen and (width < 1024px)"
+        />
     </head>
     <body>
         <div id="top">
@@ -54,15 +54,30 @@
             <h3>免責</h3>
             <p>
                 当ページの情報の正確性を保証しません<br />
-                当ページにより生じるいかなる結果について、一切の責任を負いません<br />
+                当ページにより生じるいかなる結果についても、一切の責任を負いません<br />
                 当ページは予告なく変更されることがあります
             </p>
             <hr />
         </div>
-        <div class="c">
-            <div class="red"></div>
-            <div class="red"></div>
-            <div class="red"></div>
+        <div class="grid">
+            <p class="main">
+                ;ofgihasd;fajisdf;aosidfas;fjas;dfaijsdfafasdfas;foiajsasdf
+                as;oifdajs;dfjiasd;foaisjdf
+                as;odifa;sdfoijas;dfoijas;dfoijas;ihadv;aguiowhfas
+            </p>
+            <p class="aside">
+                ;aoivbhas;dofijasd;ovjd;aosidfjasdfsd;foaijsdf;sdfjas;odfijsd
+            </p>
+        </div>
+        <div class="grid">
+            <p class="main">
+                ;ofgihasd;fajisdf;aosidfas;fjas;dfaijsdfafasdfas;foiajsasdf
+                as;oifdajs;dfjiasd;foaisjdf
+                as;odifa;sdfoijas;dfoijas;dfoijas;ihadv;aguiowhfas
+            </p>
+            <p class="aside">
+                ;aoivbhas;dofijasd;ovjd;aosidfjasdfsd;foaijsdf;sdfjas;odfijsd
+            </p>
         </div>
     </body>
 </html>

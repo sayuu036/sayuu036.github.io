@@ -19,6 +19,9 @@ const getInputFiles = () => {
 };
 
 export default defineConfig({
+  server: {
+    host: true,
+  },
   build: {
     rollupOptions: {
       input: getInputFiles(),
