@@ -1,0 +1,21 @@
+.grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 10px;
+}
+
+.grid p {
+    word-break: break-all;
+    /*white-space: pre-line;*/
+}
+
+.grid .main {
+    grid-column: 2;
+    order: 2;
+}
+
+.grid .aside {
+    grid-column: 1;
+    order: 1;
+    margin-top: auto;
+}
