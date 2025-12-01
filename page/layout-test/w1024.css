@@ -17,5 +17,5 @@
 .grid .aside {
     grid-column: 1;
     order: 1;
-    margin-top: auto;
+    opacity: 0.5;
 }
