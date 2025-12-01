@@ -4,10 +4,10 @@
     gap: 10px;
 }
 
-.grid p {
+/*.grid p {
     word-break: break-all;
-    /*white-space: pre-line;*/
-}
+    white-space: pre-line;
+}*/
 
 .grid .main {
     grid-column: 2;
@@ -17,5 +17,9 @@
 .grid .aside {
     grid-column: 1;
     order: 1;
-    opacity: 0.5;
+    /*opacity: 0.5;*/
+    color: rgba(165, 171, 182, 0.5);
+}
+.grid .aside * {
+    color: rgba(165, 171, 182, 0.5);
 }

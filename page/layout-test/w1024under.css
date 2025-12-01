@@ -1,4 +1,8 @@
 .grid .aside {
-    opacity: 0.5;
-    margin-left: 50px;
+    margin-left: 20px;
+    color: rgba(165, 171, 182, 0.5);
+}
+
+.grid .aside * {
+    color: rgba(165, 171, 182, 0.5);
 }

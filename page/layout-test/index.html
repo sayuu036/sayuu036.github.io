@@ -8,7 +8,8 @@
             * {
                 font-family: sans-serif;
                 color: #a5abb6;
-                word-break: break-all;
+                /*word-break: break-all;*/
+                overflow-wrap: anywhere;
             }
             html {
                 background-color: #282c33;
@@ -22,7 +23,13 @@
                 border: solid 1px #a5abb6;
             }
             a {
-                word-wrap: break-word;
+                /*word-wrap: break-word;*/
+            }
+            #title p:first-child {
+                margin: 0;
+            }
+            #title h1:first-of-type {
+                margin: 0 0 50px 0;
             }
         </style>
         <link
@@ -37,7 +44,7 @@
         />
     </head>
     <body>
-        <div id="top">
+        <!--<div id="top">
             <h1>sayuu036/<br />layout-test</h1>
             <p>
                 home:<br />
@@ -58,6 +65,44 @@
                 当ページは予告なく変更されることがあります
             </p>
             <hr />
+        </div>-->
+        <div class="grid">
+            <div id="title" class="main">
+                <!--<h1>sayuu036/<br />layout-test</h1>-->
+                <p>sayuu036/</p>
+                <h1>layout-test</h1>
+                <p>
+                    discription;oifajs;dogviahnsd;foiasj;vxz;jasoeifjas;doivjas;dfoijas
+                    discription;oifajs;dogviahnsd;foiasj;vxz;jasoeifjas;doivjas;dfoijas
+                    discription;oifajs;dogviahnsd;foiasj;vxz;jasoeifjas;doivjas;dfoijas
+                    discription;oifajs;dogviahnsd;foiasj;vxz;jasoeifjas;doivjas;dfoijas
+                </p>
+            </div>
+            <div class="aside">
+                <p>
+                    home:<br />
+                    <a href="https://sayuu036.github.io">
+                        https://sayuu036.github.io
+                    </a>
+                </p>
+                <h3>免責</h3>
+                <p>
+                    当ページの情報の正確性を保証しません<br />
+                    当ページにより生じるいかなる結果についても、一切の責任を負いません<br />
+                    当ページは予告なく変更されることがあります
+                </p>
+            </div>
+        </div>
+        <hr />
+        <div class="grid">
+            <p class="main">
+                ;ofgihasd;fajisdf;aosidfas;fjas;dfaijsdfafasdfas;foiajsasdf
+                as;oifdajs;dfjiasd;foaisjdf
+                as;odifa;sdfoijas;dfoijas;dfoijas;ihadv;aguiowhfas
+            </p>
+            <p class="aside">
+                ;aoivbhas;dofijasd;ovjd;aosidfjasdfsd;foaijsdf;sdfjas;odfijsd
+            </p>
         </div>
         <div class="grid">
             <p class="main">
@@ -67,6 +112,13 @@
             </p>
             <p class="aside">
                 ;aoivbhas;dofijasd;ovjd;aosidfjasdfsd;foaijsdf;sdfjas;odfijsd
+            </p>
+        </div>
+        <div class="grid">
+            <p class="main">
+                ;ofgihasd;fajisdf;aosidfas;fjas;dfaijsdfafasdfas;foiajsasdf
+                as;oifdajs;dfjiasd;foaisjdf
+                as;odifa;sdfoijas;dfoijas;dfoijas;ihadv;aguiowhfas
             </p>
         </div>
         <div class="grid">
