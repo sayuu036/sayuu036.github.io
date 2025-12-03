@@ -1,9 +1,9 @@
 # sayuu036.github.io
 
-https://sayuu036.github.io/page
-https://sayuu036.github.io/page/layout-test
-https://github.com/sayuu036
-https://github.com/sayuu036/sayuu036.github.io/actions
+- https://sayuu036.github.io/page
+  - https://sayuu036.github.io/page/layout-test
+- https://github.com/sayuu036
+  - https://github.com/sayuu036/sayuu036.github.io/actions
 
 # license
 
