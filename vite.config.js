@@ -2,10 +2,7 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import { glob } from "glob";
 import { parse } from "marked";
-
-// import mdtohtml from "./mdtohtml.js";
-
-// mdtohtml("README.md", "index.html");
+import fs from "fs";
 
 // HTMLファイルを自動検出する関数
 const getInputFiles = () => {
@@ -23,23 +20,50 @@ const getInputFiles = () => {
   return input;
 };
 
+const mdtohtml = (mdpath) => {
+  const md = fs.readFileSync(resolve(__dirname, mdpath), "utf-8");
+  const html = parse(md);
+  return html;
+};
+
+const htmlPlugin = () => {
+  return {
+    name: "html-transform",
+    enforce: "pre",
+    transformIndexHtml(html) {
+      const h = html.replace(
+        /<!--import markdown (.*?)-->/g,
+        (match, ...args) => {
+          console.log(args[0]);
+          const md = mdtohtml(args[0]);
+          console.log(md);
+          return md;
+          // return "hello";
+        },
+      );
+      return h;
+    },
+  };
+};
+
 export default defineConfig({
   plugins: [
-    {
-      name: "markdown-html",
-      async transform(code, id) {
-        if (/\.(md)$/.test(id)) {
-          const html = await parse(code);
-          return {
-            code: `
-              export const html = ${JSON.stringify(html)};
-              export const md = ${JSON.stringify(code)};
-            `,
-            map: null,
-          };
-        }
-      },
-    },
+    htmlPlugin(),
+    // {
+    //   name: "markdown-html",
+    //   async transform(code, id) {
+    //     if (/\.(md)$/.test(id)) {
+    //       const html = await parse(code);
+    //       return {
+    //         code: `
+    //           export const html = ${JSON.stringify(html)};
+    //           export const md = ${JSON.stringify(code)};
+    //         `,
+    //         map: null,
+    //       };
+    //     }
+    //   },
+    // },
   ],
   server: {
     host: true,
