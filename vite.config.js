@@ -1,10 +1,11 @@
 import { defineConfig } from "vite";
 import { resolve } from "path";
 import { glob } from "glob";
+import { parse } from "marked";
 
-import mdtohtml from "./mdtohtml.js";
+// import mdtohtml from "./mdtohtml.js";
 
-mdtohtml("README.md", "index.html");
+// mdtohtml("README.md", "index.html");
 
 // HTMLファイルを自動検出する関数
 const getInputFiles = () => {
@@ -23,6 +24,23 @@ const getInputFiles = () => {
 };
 
 export default defineConfig({
+  plugins: [
+    {
+      name: "markdown-html",
+      async transform(code, id) {
+        if (/\.(md)$/.test(id)) {
+          const html = await parse(code);
+          return {
+            code: `
+              export const html = ${JSON.stringify(html)};
+              export const md = ${JSON.stringify(code)};
+            `,
+            map: null,
+          };
+        }
+      },
+    },
+  ],
   server: {
     host: true,
   },
