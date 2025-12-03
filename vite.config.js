@@ -8,7 +8,7 @@ const getInputFiles = () => {
     ignore: ["node_modules/**", "dist/**"],
   });
 
-  const input = { index: resolve(__dirname, "index.html") };
+  const input = {};
   files.forEach((file) => {
     const name = file.replace(/\.html$/, "").replace(/\//g, "-");
     input[name] = resolve(__dirname, file);
