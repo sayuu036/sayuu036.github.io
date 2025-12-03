@@ -13,6 +13,6 @@
   },
   "dependencies": {
     "glob": "^11.0.3",
-    "sharp": "^0.34.5"
+    "zenn-markdown-html": "^0.2.10"
   }
 }

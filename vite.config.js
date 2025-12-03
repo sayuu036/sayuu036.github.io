@@ -2,13 +2,17 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 import { glob } from "glob";
 
+import mdtohtml from "./mdtohtml.js";
+
+mdtohtml("README.md", "index.html");
+
 // HTMLファイルを自動検出する関数
 const getInputFiles = () => {
   const files = glob.sync("page/**/*.html", {
     ignore: ["node_modules/**", "dist/**"],
   });
 
-  const input = {};
+  const input = { index: resolve(__dirname, "index.html") };
   files.forEach((file) => {
     const name = file.replace(/\.html$/, "").replace(/\//g, "-");
     input[name] = resolve(__dirname, file);

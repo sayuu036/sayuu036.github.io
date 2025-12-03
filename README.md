@@ -1,6 +1,8 @@
 # sayuu036.github.io
 
-https://sayuu036.github.io/index.html
+https://sayuu036.github.io/page
+https://github.com/sayuu036
+https://github.com/sayuu036/sayuu036.github.io/actions
 
 # license
 
