@@ -1,0 +1,25 @@
+/*style.css*/
+:root {
+    --color1: rgba(165, 171, 182, 1);
+    --color2: rgba(90, 104, 130, 1);
+    --color3: rgba(39, 53, 79, 1);
+    --color4: rgba(15, 27, 51, 1);
+    --color5: rgba(40, 44, 51, 1);
+}
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: var(--color1);
+    overflow-wrap: anywhere;
+}
+html {
+    background-color: var(--color5);
+    width: 100%;
+    overflow-x: clip;
+}
+body {
+    padding: 20px;
+}
+hr {
+    border: solid 1px var(--color1);
+}
