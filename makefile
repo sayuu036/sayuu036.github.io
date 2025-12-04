@@ -1,5 +1,5 @@
 all: dev
-.PHONY: build g dev
+.PHONY: dev build g gh dep
 dev:
 	npm run dev
 build:
@@ -8,4 +8,7 @@ g:
 	git add --all
 	git commit
 	git push origin main
-dep: build g
+gh:
+	gh workflow run static.yml
+	gh run watch
+dep: build g gh
