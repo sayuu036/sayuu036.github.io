@@ -15,7 +15,6 @@ const getInputFiles = () => {
     const name = file.replace(/\.html$/, "").replace(/\//g, "-");
     input[name] = resolve(__dirname, file);
   });
-  console.log(input);
 
   return input;
 };
@@ -32,13 +31,10 @@ const htmlPlugin = () => {
     enforce: "pre",
     transformIndexHtml(html) {
       const h = html.replace(
-        /<!--import markdown (.*?)-->/g,
+        /<!--import markdown (.*?)-->/,
         (match, ...args) => {
-          console.log(args[0]);
           const md = mdtohtml(args[0]);
-          console.log(md);
           return md;
-          // return "hello";
         },
       );
       return h;
@@ -47,24 +43,7 @@ const htmlPlugin = () => {
 };
 
 export default defineConfig({
-  plugins: [
-    htmlPlugin(),
-    // {
-    //   name: "markdown-html",
-    //   async transform(code, id) {
-    //     if (/\.(md)$/.test(id)) {
-    //       const html = await parse(code);
-    //       return {
-    //         code: `
-    //           export const html = ${JSON.stringify(html)};
-    //           export const md = ${JSON.stringify(code)};
-    //         `,
-    //         map: null,
-    //       };
-    //     }
-    //   },
-    // },
-  ],
+  plugins: [htmlPlugin()],
   server: {
     host: true,
   },
