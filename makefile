@@ -1,6 +1,5 @@
-all: build g
+all: dev
 .PHONY: build g dev
-
 dev:
 	npm run dev
 build:
@@ -9,3 +8,4 @@ g:
 	git add --all
 	git commit
 	git push origin main
+dep: build g
