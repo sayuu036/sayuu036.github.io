@@ -37,6 +37,8 @@ const htmlPlugin = () => {
       const h = html.replace(
         /<!--import markdown (.*?)-->/,
         (match, ...args) => {
+          console.log(match);
+          console.log(args);
           const md = mdtohtml(args[0], p);
           return md;
         },

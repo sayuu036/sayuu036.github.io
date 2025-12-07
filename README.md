@@ -3,9 +3,7 @@
 - repository
   - https://github.com/sayuu036/sayuu036.github.io
 - page
-  - https://sayuu036.github.io
-  - https://sayuu036.github.io/page/home
-  - https://sayuu036.github.io/page/layout-test
+  - [/page/home/index.html](/page/home/index.html)
 
 # License 
 
