@@ -3,6 +3,7 @@ import { resolve } from "path";
 import { glob } from "glob";
 import { parse } from "marked";
 import fs from "fs";
+import path from "path/posix";
 
 // HTMLファイルを自動検出する関数
 const getInputFiles = () => {
@@ -19,8 +20,8 @@ const getInputFiles = () => {
   return input;
 };
 
-const mdtohtml = (mdpath) => {
-  const md = fs.readFileSync(resolve(__dirname, mdpath), "utf-8");
+const mdtohtml = (mdpath, path) => {
+  const md = fs.readFileSync(resolve(__dirname, path, mdpath), "utf-8");
   const html = parse(md);
   return html;
 };
@@ -29,11 +30,14 @@ const htmlPlugin = () => {
   return {
     name: "html-transform",
     enforce: "pre",
-    transformIndexHtml(html) {
+    transformIndexHtml(html, ctx) {
+      console.log(path.dirname(ctx.path));
+      const p = path.dirname(ctx.path.slice(1));
+      console.log(resolve(__dirname, p));
       const h = html.replace(
         /<!--import markdown (.*?)-->/,
         (match, ...args) => {
-          const md = mdtohtml(args[0]);
+          const md = mdtohtml(args[0], p);
           return md;
         },
       );
