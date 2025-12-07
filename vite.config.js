@@ -20,8 +20,8 @@ const getInputFiles = () => {
   return input;
 };
 
-const mdtohtml = (mdpath, path) => {
-  const md = fs.readFileSync(resolve(__dirname, path, mdpath), "utf-8");
+const mdtohtml = (path) => {
+  const md = fs.readFileSync(path, "utf-8");
   const html = parse(md);
   return html;
 };
@@ -31,19 +31,20 @@ const htmlPlugin = () => {
     name: "html-transform",
     enforce: "pre",
     transformIndexHtml(html, ctx) {
-      console.log(path.dirname(ctx.path));
       const p = path.dirname(ctx.path.slice(1));
-      console.log(resolve(__dirname, p));
-      const h = html.replace(
-        /<!--import markdown (.*?)-->/,
-        (match, ...args) => {
-          console.log(match);
-          console.log(args);
-          const md = mdtohtml(args[0], p);
-          return md;
-        },
-      );
-      return h;
+      const reg = /<!--import markdown (.*?)-->/dg;
+      let r;
+      let html2 = "";
+      let i = 0;
+      while ((r = reg.exec(html))) {
+        // console.log(r);
+        // console.log(resolve(__dirname, p, r[1]));
+        const t = mdtohtml(resolve(__dirname, p, r[1]));
+        html2 = html2 + html.substring(i, r.indices[0][0]) + t;
+        i = r.indices[0][1];
+      }
+      html2 = html2 + html.substring(i);
+      return html2;
     },
   };
 };
