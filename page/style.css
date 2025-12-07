@@ -21,5 +21,36 @@ body {
     padding: 20px;
 }
 hr {
-    border: solid 1px var(--color1);
+    border: solid 1px var(--color2);
+}
+@media (1024px <= width) {
+    .g {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 10px;
+    }
+
+    .gm {
+        grid-column: 2;
+        order: 2;
+    }
+
+    .gs {
+        grid-column: 1;
+        order: 1;
+        color: var(--color2);
+    }
+    .gs * {
+        color: var(--color2);
+    }
+}
+
+@media (width < 1024px) {
+    .gs {
+        padding-left: 30px;
+        color: var(--color2);
+    }
+    .gs * {
+        color: var(--color2);
+    }
 }
