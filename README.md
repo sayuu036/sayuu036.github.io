@@ -1,9 +1,7 @@
 # sayuu036.github.io
 
-- repository
-  - https://github.com/sayuu036/sayuu036.github.io
-- page
-  - [/page/home/index.html](/page/home/index.html)
+- https://github.com/sayuu036/sayuu036.github.io
+- https://sayuu036.github.io
 
 # License 
 
