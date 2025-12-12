@@ -17,6 +17,7 @@ const getInputFiles = () => {
     input[name] = resolve(__dirname, file);
   });
 
+  console.log(input);
   return input;
 };
 
