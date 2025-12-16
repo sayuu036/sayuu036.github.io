@@ -1,11 +1,16 @@
 # sayuu036.github.io
 
-- github
+My personal blog.
+
+- sayuu036
+  - https://github.com/sayuu036
   - https://github.com/sayuu036/sayuu036.github.io
   - https://github.com/sayuu036/sayuu036.github.io/actions
-- website
   - https://sayuu036.github.io
-
+- bookmark *external link
+  - https://note.com/saranami (12/16/2025)
+  - https://shonenjumpplus.com/ (12/16/2025)
+  
 # License 
 
 MIT License
