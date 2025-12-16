@@ -1,7 +1,8 @@
 # sayuu036.github.io
 
-- repository
+- github
   - https://github.com/sayuu036/sayuu036.github.io
+  - https://github.com/sayuu036/sayuu036.github.io/actions
 - website
   - https://sayuu036.github.io
 
