@@ -7,7 +7,7 @@ import fs from "fs";
 
 // HTMLファイルを自動検出する関数
 const getInputFiles = () => {
-  const files = glob.sync("page/**/*.html", {
+  const files = glob.sync("*.html", {
     ignore: ["node_modules/**", "dist/**"],
   });
 

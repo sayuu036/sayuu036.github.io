@@ -2,18 +2,11 @@
 
 My personal blog.
 
-- sayuu036
-  - https://github.com/sayuu036
-  - https://www.youtube.com/@sayuu036
-- blog
-  - https://github.com/sayuu036/sayuu036.github.io
-  - https://github.com/sayuu036/sayuu036.github.io/actions
-  - https://sayuu036.github.io
-- bookmark *external link
-  - (12/16/2025) https://note.com/saranami 
-  - (12/16/2025) https://shonenjumpplus.com/ 
-  
-# License 
+- https://github.com/sayuu036/sayuu036.github.io
+- https://github.com/sayuu036/sayuu036.github.io/actions
+- https://sayuu036.github.io
+
+## License 
 
 MIT License
 
