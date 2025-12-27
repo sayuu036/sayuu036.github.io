@@ -6,7 +6,7 @@ My personal blog.
 - https://github.com/sayuu036/sayuu036.github.io/actions
 - https://sayuu036.github.io
 
-## License 
+## License
 
 MIT License
 

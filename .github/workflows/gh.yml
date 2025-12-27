@@ -1,0 +1,17 @@
+name: run gh.js
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-gh-js:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: setup node
+        uses: actions/setup-node@v3
+      - name: run-gh-js
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: npm run gh
